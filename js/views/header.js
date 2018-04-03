@@ -1,21 +1,28 @@
-window.HeaderView = Backbone.View.extend({
+define(
+    ['jquery', 'lodash', 'utils/tpl', 'backbone'],
+    function($, _, tpl, Backbone) {
 
-    initialize: () => {
-        this.template = _.template( tpl.get('header') )
-    },
+    HeaderView = Backbone.View.extend({
 
-    render: () => {
-        this.$el.html( this.template() )
-        return this.el;
-    },
+        initialize: () => {
+            this.template = _.template( tpl.get('header') )
+        },
 
-    events: {
-        "click .new" : "newWine"
-    },
+        render: () => {
+            this.$el.html( this.template() )
+            return this.el;
+        },
 
-    newWine: () => {
-        app.navigate('wines/new', true)
-        return false
-    }
-    
+        events: {
+            "click .new" : "newWine"
+        },
+
+        newWine: () => {
+            app.navigate('wines/new', true)
+            return false
+        }
+        
+    })
+
+    return HeaderView
 })
