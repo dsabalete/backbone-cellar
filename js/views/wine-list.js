@@ -26,7 +26,7 @@ window.WineListItemView = Backbone.View.extend({
     tagName: 'li',
 
     initialize: () => {
-        this.template = _.template( $('#wine-list-item-template').html() )
+        this.template = _.template( tpl.get('wine-list-item') )
         this.model.bind( 'change', this.render(), this)
         this.model.bind( 'destroy', this.close(), this)
     },

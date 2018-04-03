@@ -6,3 +6,7 @@ Backbone.View.prototype.close = () => {
     this.remove()
     this.unbind()
 }
+
+tpl.loadTemplates(['header', 'wine-details', 'wine-list-item', 'start'], () => {
+
+})

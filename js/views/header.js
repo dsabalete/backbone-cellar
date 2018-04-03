@@ -1,7 +1,7 @@
 window.HeaderView = Backbone.View.extend({
 
     initialize: () => {
-        this.template = _.template( $('#header-template').html() )
+        this.template = _.template( tpl.get('header') )
     },
 
     render: () => {
